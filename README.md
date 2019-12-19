@@ -250,7 +250,7 @@ The container view contains the PopupDialogDefaultView or your custom view contr
 let containerAppearance = PopupDialogContainerView.appearance()
 
 containerAppearance.backgroundColor = UIColor(red:0.23, green:0.23, blue:0.27, alpha:1.00)
-containerAppearance.cornerRadius    = 2
+containerAppearance.cornerRadius    = 2     // Use `containerAppearance.setupCornerRadius(2)` instead if you define `cornerRadius` property in `UIView`
 containerAppearance.shadowEnabled   = true
 containerAppearance.shadowColor     = .black
 containerAppearance.shadowOpacity   = 0.6
