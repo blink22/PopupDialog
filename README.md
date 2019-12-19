@@ -215,6 +215,10 @@ vc.titleText = "..."
 vc.messageText = "..."
 vc.buttonAlignment = .horizontal
 vc.transitionStyle = .bounceUp
+vc.imageTopMargin = 0
+vc.titleTopMargin = 30
+vc.messageTopMargin = 8
+vc.messageBottomMargin = 30
 ```
 
 <p>&nbsp;</p>
