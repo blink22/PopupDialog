@@ -103,6 +103,18 @@ final public class PopupDialogDefaultView: UIView {
     /// The height constraint of the image view, 0 by default
     internal var imageHeightConstraint: NSLayoutConstraint?
 
+    /// The margin constraint between image view top and `PopupDialogDefaultView` top
+    internal var imageTopMarginConstraint: NSLayoutConstraint!
+
+    /// The margin constraint between title label top and image view bottom
+    internal var titleTopMarginConstraint: NSLayoutConstraint!
+    
+    /// The margin constraint between message label top and title label bottom
+    internal var messageTopMarginConstraint: NSLayoutConstraint!
+
+    /// The margin constraint between message label bottom and `PopupDialogDefaultView` bottom
+    internal var messageBottomMarginConstraint: NSLayoutConstraint!
+
     // MARK: - Initializers
 
     internal override init(frame: CGRect) {
@@ -133,8 +145,21 @@ final public class PopupDialogDefaultView: UIView {
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView]|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-(==20@900)-[titleLabel]-(==20@900)-|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-(==20@900)-[messageLabel]-(==20@900)-|", options: [], metrics: nil, views: views)
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[imageView]-(==30@900)-[titleLabel]-(==8@900)-[messageLabel]-(==30@900)-|", options: [], metrics: nil, views: views)
         
+        // Image view top margin constraint
+        imageTopMarginConstraint = .init(item: imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+
+        // Title label top margin constraint
+        titleTopMarginConstraint = .init(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 30)
+
+        // Message label top margin constraint
+        messageTopMarginConstraint = .init(item: messageLabel, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 8)
+
+        // Message label bottom constraint
+        messageBottomMarginConstraint = .init(item: self, attribute: .bottom, relatedBy: .equal, toItem: messageLabel, attribute: .bottom, multiplier: 1, constant: 30)
+
+        constraints += [imageTopMarginConstraint, titleTopMarginConstraint, messageTopMarginConstraint, messageBottomMarginConstraint]
+
         // ImageView height constraint
         imageHeightConstraint = NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: imageView, attribute: .height, multiplier: 0, constant: 0)
         

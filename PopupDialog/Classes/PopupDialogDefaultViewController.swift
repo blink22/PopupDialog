@@ -70,6 +70,40 @@ public extension PopupDialogDefaultViewController {
         }
     }
 
+    // MARK: Margins
+
+    /// The margin between image and super view top
+    var imageTopMargin: CGFloat {
+        get { return standardView.imageTopMarginConstraint.constant }
+        set {
+            standardView.imageTopMarginConstraint.constant = newValue
+        }
+    }
+
+    /// The margin between title and image
+    var titleTopMargin: CGFloat {
+        get { return standardView.titleTopMarginConstraint.constant }
+        set {
+            standardView.titleTopMarginConstraint.constant = newValue
+        }
+    }
+
+    /// The margin between message and title
+    var messageTopMargin: CGFloat {
+        get { return standardView.messageTopMarginConstraint.constant }
+        set {
+            standardView.messageTopMarginConstraint.constant = newValue
+        }
+    }
+
+    /// The margin between message and buttons view
+    var messageBottomMargin: CGFloat {
+        get { return standardView.messageBottomMarginConstraint.constant }
+        set {
+            standardView.messageBottomMarginConstraint.constant = newValue
+        }
+    }
+    
     // MARK: Appearance
 
     /// The font and size of the title label
