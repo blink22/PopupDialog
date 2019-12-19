@@ -178,8 +178,8 @@ public enum PopupDialogTransitionStyle: Int {
 
 ## Preferred Width
 
-PopupDialog will always try to have a max width of 340 . On iPhones with smaller screens, like iPhone 5 SE, width would be 320.
-340 is also the standard width for iPads. By setting preferredWidth you can override the max width of 340 for iPads only.
+PopupDialog will always try to have a max width of 340 . On iPhones with smaller screens, like iPhone 5 SE, width would be 300.
+340 is also the standard width for iPads. By setting preferredWidth you can override this max width.
 
 ## Gesture Dismissal
 
