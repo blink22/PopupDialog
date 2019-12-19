@@ -48,6 +48,11 @@ final public class PopupDialogContainerView: UIView {
         }
     }
     
+    /// Alias method for `cornerRadius` variable to avoid ambiguity.
+    @objc public dynamic func setupCornerRadius(_ radius: Float) {
+        self.cornerRadius = radius
+    }
+
     // MARK: Shadow related
 
     /// Enable / disable shadow rendering of the container
