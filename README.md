@@ -178,8 +178,8 @@ public enum PopupDialogTransitionStyle: Int {
 
 ## Preferred Width
 
-PopupDialog will always try to have a max width of 340 . On iPhones with smaller screens, like iPhone 5 SE, width would be 320.
-340 is also the standard width for iPads. By setting preferredWidth you can override the max width of 340 for iPads only.
+PopupDialog will always try to have a max width of 340 . On iPhones with smaller screens, like iPhone 5 SE, width would be 300.
+340 is also the standard width for iPads. By setting preferredWidth you can override this max width.
 
 ## Gesture Dismissal
 
@@ -250,7 +250,7 @@ The container view contains the PopupDialogDefaultView or your custom view contr
 let containerAppearance = PopupDialogContainerView.appearance()
 
 containerAppearance.backgroundColor = UIColor(red:0.23, green:0.23, blue:0.27, alpha:1.00)
-containerAppearance.cornerRadius    = 2
+containerAppearance.cornerRadius    = 2     // Use `containerAppearance.setupCornerRadius(2)` instead if you define `cornerRadius` property in `UIView`
 containerAppearance.shadowEnabled   = true
 containerAppearance.shadowColor     = .black
 containerAppearance.shadowOpacity   = 0.6
